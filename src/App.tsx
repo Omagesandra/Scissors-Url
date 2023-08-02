@@ -1,25 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
+import { UserProvider } from './contexts';
+import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyLinks from './Pages/Dashboard/MyLinks/MyLinks';
+import NewLink from './Pages/Dashboard/NewLink/NewLink';
 
-function App() {
+
+
+
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <UserProvider>
+    <BrowserRouter>
+    
+      <Routes>
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Home />} />
+        <Route element={<ProtectedRoute/>}>
+          <Route path='/dashboard' element={<Dashboard/>} />
+          <Route path='/dashboard/my-links' element={<MyLinks customUrl="string" shortUrl="string" longUrl='string'/>} />
+          <Route path='/dashboard/new-link' element={<NewLink/>} />
+        </Route>
+      </Routes>
+    
+      </BrowserRouter>
+      </UserProvider>
+    </>
   );
 }
 

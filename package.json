@@ -7,12 +7,23 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.32",
+    "@types/node": "^16.18.34",
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
+    "clipboard-copy": "^4.0.1",
+    "firebase": "^10.0.0",
+    "flowbite": "^1.7.0",
+    "flowbite-react": "^0.4.10",
+    "framer-motion": "^10.12.18",
+    "generate-password": "^1.7.0",
+    "mongoose": "^7.3.4",
     "react": "^18.2.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^18.2.0",
+    "react-firebase-hooks": "^5.1.1",
+    "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.8.9",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -39,5 +50,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-anchor-link-smooth-scroll": "^1.0.2",
+    "@types/react-scroll": "^1.8.7"
   }
 }
